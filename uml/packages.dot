@@ -1,0 +1,17 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"app" [color="black", label=<app>, shape="box", style="solid"];
+"app.config" [color="black", label=<app.config>, shape="box", style="solid"];
+"app.forms" [color="black", label=<app.forms>, shape="box", style="solid"];
+"app.models" [color="black", label=<app.models>, shape="box", style="solid"];
+"app.views" [color="black", label=<app.views>, shape="box", style="solid"];
+"app" -> "app" [arrowhead="open", arrowtail="none"];
+"app" -> "app.config" [arrowhead="open", arrowtail="none"];
+"app" -> "app.models" [arrowhead="open", arrowtail="none"];
+"app" -> "app.views" [arrowhead="open", arrowtail="none"];
+"app.models" -> "app" [arrowhead="open", arrowtail="none"];
+"app.views" -> "app" [arrowhead="open", arrowtail="none"];
+"app.views" -> "app.forms" [arrowhead="open", arrowtail="none"];
+"app.views" -> "app.models" [arrowhead="open", arrowtail="none"];
+}

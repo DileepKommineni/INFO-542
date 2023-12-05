@@ -1,0 +1,8 @@
+.view_recipe_box{
+    border-radius: 5px;
+}
+
+.view_recipe_box img{
+    border:1px solid #ccc;
+    border-radius: 5px;
+}

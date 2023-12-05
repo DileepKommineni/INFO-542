@@ -1,0 +1,21 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"app.config.Config" [color="black", fontcolor="black", label=<{Config|ADDRESS : NoneType<br ALIGN="LEFT"/>ADMIN_PASSWORD : NoneType<br ALIGN="LEFT"/>ADMIN_USERNAME : NoneType<br ALIGN="LEFT"/>ASSETS_ROOT : NoneType<br ALIGN="LEFT"/>BASE_DIR : bytes, str<br ALIGN="LEFT"/>CSRF_ENABLED : bool<br ALIGN="LEFT"/>MAIL_PASSWORD : NoneType<br ALIGN="LEFT"/>MAIL_USERNAME : NoneType<br ALIGN="LEFT"/>PORT : NoneType<br ALIGN="LEFT"/>SECRET_KEY : NoneType<br ALIGN="LEFT"/>SQLALCHEMY_DATABASE_URI : NoneType<br ALIGN="LEFT"/>SQLALCHEMY_TRACK_MODIFICATIONS : bool<br ALIGN="LEFT"/>UPLOAD_FOLDER<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.config.DebugConfig" [color="black", fontcolor="black", label=<{DebugConfig|DEBUG : bool<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.models.Interaction" [color="black", fontcolor="black", label=<{Interaction|date_stamp<br ALIGN="LEFT"/>id<br ALIGN="LEFT"/>recipe_id<br ALIGN="LEFT"/>text<br ALIGN="LEFT"/>user_id<br ALIGN="LEFT"/>value<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.forms.LoginForm" [color="black", fontcolor="black", label=<{LoginForm|password : PasswordField<br ALIGN="LEFT"/>submit : SubmitField<br ALIGN="LEFT"/>username : StringField<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.views.NewInteraction" [color="black", fontcolor="black", label=<{NewInteraction|data : dict<br ALIGN="LEFT"/>|join(observer)<br ALIGN="LEFT"/>left(observer)<br ALIGN="LEFT"/>update(observer, new_interaction)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"app.views.PersonalHistoryStrategy" [color="black", fontcolor="black", label=<{PersonalHistoryStrategy|<br ALIGN="LEFT"/>|recommend(recipes, user)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"app.config.ProductionConfig" [color="black", fontcolor="black", label=<{ProductionConfig|DEBUG : bool<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.models.Recipe" [color="black", fontcolor="black", label=<{Recipe|cook_time<br ALIGN="LEFT"/>cuisine<br ALIGN="LEFT"/>date_stamp<br ALIGN="LEFT"/>difficulty<br ALIGN="LEFT"/>id<br ALIGN="LEFT"/>image<br ALIGN="LEFT"/>ingredients<br ALIGN="LEFT"/>interactions<br ALIGN="LEFT"/>prep_time<br ALIGN="LEFT"/>preparation_steps<br ALIGN="LEFT"/>title<br ALIGN="LEFT"/>user_id<br ALIGN="LEFT"/>|created_by(user)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"app.views.RecommendationStrategy" [color="black", fontcolor="black", label=<{RecommendationStrategy|<br ALIGN="LEFT"/>|<I>recommend</I>(recipes, user)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"app.forms.SignupForm" [color="black", fontcolor="black", label=<{SignupForm|confirm_password : PasswordField<br ALIGN="LEFT"/>email : StringField<br ALIGN="LEFT"/>password : PasswordField<br ALIGN="LEFT"/>submit : SubmitField<br ALIGN="LEFT"/>username : StringField<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.views.TrendingRecipesStrategy" [color="black", fontcolor="black", label=<{TrendingRecipesStrategy|<br ALIGN="LEFT"/>|recommend(recipes, user)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"app.models.User" [color="black", fontcolor="black", label=<{User|email<br ALIGN="LEFT"/>id<br ALIGN="LEFT"/>interactions<br ALIGN="LEFT"/>password<br ALIGN="LEFT"/>recipes<br ALIGN="LEFT"/>recipes_created<br ALIGN="LEFT"/>username<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"app.views.UserAuthentication" [color="black", fontcolor="black", label=<{UserAuthentication|<br ALIGN="LEFT"/>|login(username, password)<br ALIGN="LEFT"/>logout()<br ALIGN="LEFT"/>signup(username, email, password)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"app.config.DebugConfig" -> "app.config.Config" [arrowhead="empty", arrowtail="none"];
+"app.config.ProductionConfig" -> "app.config.Config" [arrowhead="empty", arrowtail="none"];
+"app.views.PersonalHistoryStrategy" -> "app.views.RecommendationStrategy" [arrowhead="empty", arrowtail="none"];
+"app.views.TrendingRecipesStrategy" -> "app.views.RecommendationStrategy" [arrowhead="empty", arrowtail="none"];
+}

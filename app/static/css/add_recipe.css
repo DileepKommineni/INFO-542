@@ -1,0 +1,17 @@
+
+.add_recipe_box{
+    margin:0 auto;
+    background-color: white;
+    padding:20px;
+    border-radius: 10px;
+}
+
+.add_recipe_box form .btn{
+    width:100%;
+}
+
+.add_recipe_box img{
+    margin: 0 auto;
+    border:1px solid #eee;
+    border-radius: 3px;
+}

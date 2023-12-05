@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+.index_heading {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index_heading h1 {
+    color: rgba(255, 0, 0, 0.1);
+    font-size: 150px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    background-image: url('../images/moving_bg.jpg');
+    -webkit-background-clip: text;
+    animation: background-text-animation 15s linear infinite;
+    text-shadow: 5px 5px 5px rgb(220, 255, 236);
+}
+
+@keyframes background-text-animation {
+    0% {
+        background-position: left 0px top 50%;
+    }
+
+    50% {
+        background-position: left 1500px top 50%;
+    }
+
+    100% {
+        background-position: left 0px top 50%;
+    }
+}
